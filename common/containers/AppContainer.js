@@ -20,7 +20,7 @@ const store = createStore(
 class AppContainer extends React.Component {
   render = () => {
     return (
-      <Body>
+      <Body headerHeight={80}>
         <Header />
         <WallContainer />
       </Body>
