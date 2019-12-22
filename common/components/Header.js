@@ -7,14 +7,22 @@ import View from 'lib/components/layout/View'
 class Header extends React.Component {
   render = () => {
     return (
-      <View>
+      <View {...this.props}>
         <View>
-          <Text fontSize={40}>
+          <Text
+            style={{
+              fontSize: 40
+            }}
+          >
             Wall of Ads
           </Text>
         </View>
         <View>
-          <Text fontSize={20}>
+          <Text
+            style={{
+              fontSize: 20
+            }}
+          >
             Can you spot the fake below?
           </Text>
         </View>
