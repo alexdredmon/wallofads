@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Ad from 'common/components/Ad'
+import FlexCell from 'lib/components/layout/FlexCell'
+import FlexColumn from 'lib/components/layout/FlexColumn'
 
-import FlexCell from 'components/layout/FlexCell'
-import FlexColumn from 'components/layout/FlexColumn'
+import Ad from 'common/components/Ad'
 
 class WallContainer extends React.Component {
   render = () => {

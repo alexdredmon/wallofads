@@ -1,0 +1,9 @@
+[submodule "web/src/lib"]
+	path = web/src/lib
+	url = https://github.com/alexdredmon/lib-react-web.git
+[submodule "mobile/src/lib"]
+	path = mobile/src/lib
+	url = https://github.com/alexdredmon/lib-react-native
+[submodule "common/lib"]
+	path = common/lib
+	url = https://github.com/alexdredmon/lib-js
