@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, View } from 'react-native';
 
 
-export const MobileView = props => {
+export const ViewMobile = props => {
   const {
     children,
   } = props
@@ -14,4 +14,4 @@ export const MobileView = props => {
   )
 }
 
-export default MobileView
+export default ViewMobile

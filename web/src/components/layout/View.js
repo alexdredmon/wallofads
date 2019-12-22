@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-export const View = props => {
+export const ViewWeb = props => {
   const {
     children,
   } = props
@@ -13,4 +13,4 @@ export const View = props => {
   )
 }
 
-export default View
+export default ViewWeb

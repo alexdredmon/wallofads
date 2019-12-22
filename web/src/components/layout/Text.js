@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-export const Text = props => {
+export const TextWeb = props => {
   const {
     children,
     fontSize=16,
@@ -16,4 +16,4 @@ export const Text = props => {
   )
 }
 
-export default Text
+export default TextWeb

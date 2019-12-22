@@ -1,8 +1,8 @@
 import React from 'react'
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text } from 'react-native'
 
 
-export const MobileText = props => {
+export const TextMobile = props => {
   const {
     children,
     fontSize=16
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default MobileText
+export default TextMobile
