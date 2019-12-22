@@ -4,3 +4,6 @@
 [submodule "mobile/src/lib"]
 	path = mobile/src/lib
 	url = https://github.com/alexdredmon/lib-react-native
+[submodule "common/lib"]
+	path = common/lib
+	url = https://github.com/alexdredmon/lib-js
