@@ -3,6 +3,7 @@ import React from 'react'
 export const FlexCellWeb = props => (
   <div
     style={{
+      alignItems: 'center',
       flex: 1,
       display: 'flex',
       justifyContent: 'center',

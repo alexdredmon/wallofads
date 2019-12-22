@@ -8,9 +8,16 @@ class Header extends React.Component {
   render = () => {
     return (
       <View>
-        <Text fontSize={40}>
-          Wall of Ads
-        </Text>
+        <View>
+          <Text fontSize={40}>
+            Wall of Ads
+          </Text>
+        </View>
+        <View>
+          <Text fontSize={20}>
+            Can you spot the fake below?
+          </Text>
+        </View>
       </View>
     )
   }

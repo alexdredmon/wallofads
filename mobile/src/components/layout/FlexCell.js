@@ -10,10 +10,12 @@ export const FlexCellMobile = props => (
   </View>
 )
 
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
   body: {
+    alignItems: 'center',
     display: 'flex',
     flex: 1,
+    justifyContent: 'center',
   },
 })
 

@@ -5,10 +5,11 @@ import { StyleSheet, View } from 'react-native';
 export const ViewMobile = props => {
   const {
     children,
+    ...rest
   } = props
 
   return (
-    <View>
+    <View {...rest}>
       { children }
     </View>
   )
