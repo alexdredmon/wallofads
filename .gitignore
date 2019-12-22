@@ -1,0 +1,4 @@
+mobile/src/common
+web/src/common
+
+*.sublime-workspace
