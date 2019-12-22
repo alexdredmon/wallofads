@@ -1,10 +1,10 @@
 import React from 'react'
 
+import Body from 'lib/components/layout/Body'
+import Text from 'lib/components/layout/Text'
+
 import Header from 'common/components/Header'
 import WallContainer from 'common/containers/WallContainer'
-
-import Body from 'components/layout/Body'
-import Text from 'components/layout/Text'
 
 
 class AppContainer extends React.Component {
