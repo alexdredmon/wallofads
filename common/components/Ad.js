@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Text from  'components/layout/Text'
-import View from  'components/layout/View'
+import Text from  'lib/components/layout/Text'
+import View from  'lib/components/layout/View'
 
 class Ad extends React.Component {
   render = () => {
