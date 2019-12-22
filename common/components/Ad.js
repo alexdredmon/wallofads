@@ -13,10 +13,10 @@ class Ad extends React.Component {
     } = this.props
 
     if (fake) {
-      alert('Good job!  This was a fake ad.')
+      alert("Good job!  That's a fake ad.")
       handleDealAds()
     } else {
-      alert('Nice try, but that is a real ad!')
+      alert("Nice try, but that's a real ad!")
     }
   }
   
