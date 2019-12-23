@@ -26,6 +26,11 @@
     "ios": {
       "bundleIdentifier": "com.wallofadvertisements",
       "supportsTablet": true
-    }
+    },
+    "android": {
+      "package": "com.wallofadvertisements"
+    },
+    "description": "Internet users today are inundated with ads fighting to get their attention.  In this frenzy, the lines between what is and isn't an ad have become increasingly blurred.\n\nThis game / art project conceptualized by San Francisco artist Eric Dyer (https://eric-dyer.com/home.html) presents the user with a never ending stream of \"ads\" with a catch - they must spot the fake among a series of entries scraped from actual online advertisements.\n\nIf they correctly pick the fake, it's on to the next round to  identify which ads are real and which aren't all over again.  Otherwise, they're left to keep guessing until they get it right.\n\nPlease note all \"ads\" displayed are simply text scraped from actual ads and not actual links to external or promoted content.",
+    "githubUrl": "https://github.com/alexdredmon/wallofads"
   }
 }

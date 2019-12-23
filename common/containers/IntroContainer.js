@@ -23,7 +23,7 @@ class IntroContainer extends React.Component {
           </View>
           <View style={{marginTop:  10}}>
             <Text style={{fontSize: 20, textAlign: 'center'}}>
-              Tap anywhere to  begin, then tap on the ad(s) you think are aren't real.
+              Tap here to begin, then tap on the ad(s) you think are aren't real.
             </Text>
           </View>
           <View style={{marginTop:  10}}>
