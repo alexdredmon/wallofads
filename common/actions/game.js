@@ -1,6 +1,8 @@
 export const CORRECT_GUESS = 'game/CORRECT_GUESS'
 export const INCORRECT_GUESS = 'game/INCORRECT_GUESS'
 export const RESET_GAME = 'game/RESET_GAME'
+export const START_GAME = 'game/START_GAME'
+export const TICK = 'game/TICK'
 
 
 export const correctGuess = ad => ({
@@ -15,4 +17,12 @@ export const incorrectGuess = ad => ({
 
 export const resetGame = () => ({
   type: RESET_GAME,
+})
+
+export const startGame = () => ({
+  type: START_GAME,
+})
+
+export const tick = () => ({
+  type: TICK,
 })

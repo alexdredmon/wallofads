@@ -13,7 +13,8 @@ import View from 'lib/components/layout/View'
 class Header extends React.Component {
   render = () => {
     const {
-      score
+      score,
+      time,
     } = this.props
 
     return (
@@ -21,38 +22,77 @@ class Header extends React.Component {
         {...this.props}
         style={{
           ...this.props.style,
-          cursor: 'pointer',
         }}
       >
         <FlexRow>
-          <FlexCell
-            style={{alignItems: 'flex-start'}}
-          >
+          <FlexCell>
             <Text
               style={{
-                fontSize: 40
+                color: '#f71b7d',
+                fontSize: 40,
+                fontWeight: 'bold',
               }}
             >
-              Wall of Ads
-            </Text>
-          </FlexCell>
-          <FlexCell
-            style={{alignItems: 'flex-end'}}
-          >
-            <Text>
-              Score: {score ? commaFormat(score) : 0}
+              WALL OF ADS
             </Text>
           </FlexCell>
         </FlexRow>
-        <View>
-          <Text
+        <FlexRow>
+          <FlexCell
             style={{
-              fontSize: 20
+              justifyContent: 'flex-start',
+              flexDirection: 'row',
+              marginLeft: 15,
             }}
           >
-            Can you spot the fake?
-          </Text>
-        </View>
+            <Text
+              style={{
+                color: '#727272',
+                fontSize: 20,
+                marginRight: 5,
+                textTransform: 'uppercase',
+              }}
+            >
+              Time:
+            </Text>
+            <Text
+              style={{
+                color: '#fff',
+                fontSize: 20,
+                marginRight: 5,
+              }}
+            >
+              {time || 0}
+            </Text>
+          </FlexCell>
+          <FlexCell
+            style={{
+              justifyContent: 'flex-end',
+              flexDirection: 'row',
+              marginRight: 15,
+            }}
+          >
+            <Text
+              style={{
+                color: '#727272',
+                fontSize: 20,
+                marginLeft: 5,
+                textTransform: 'uppercase',
+              }}
+            >
+              Score:
+            </Text>
+            <Text
+              style={{
+                color: '#7dbf40',
+                fontSize: 20,
+                marginLeft: 5,
+              }}
+            >
+              {score ? commaFormat(score) : 0}
+            </Text>
+          </FlexCell>
+        </FlexRow>
       </View>
     )
   }
@@ -62,6 +102,7 @@ class Header extends React.Component {
 export default connect(
   (state, props) => ({
     score: getIn(state, 'game.score'),
+    time: getIn(state, 'game.time'),
   }),
   (dispatch, props) => ({}),
 )(Header)

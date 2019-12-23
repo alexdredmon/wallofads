@@ -3,11 +3,15 @@ import { connect } from 'react-redux'
 import { Provider } from 'react-redux'
 import { createStore, compose } from 'redux'
 
+import { getIn } from 'common/lib/core/util/iterable'
 import If from 'common/lib/components/If'
 
 import Body from 'lib/components/layout/Body'
 
-import { resetGame } from 'common/actions/game'
+import {
+  resetGame,
+  startGame,
+} from 'common/actions/game'
 
 import Header from 'common/components/Header'
 import IntroContainer from 'common/containers/IntroContainer'
@@ -24,42 +28,30 @@ const store = createStore(
 )
 
 class AppContainer extends React.Component {
-  state = {
-    playing: false,
-  }
-
-  handleResetGame = () => {
-    const {
-      resetGame
-    } = this.props
-
-    resetGame()
-    this.setState({
-      playing: false,
-    })
-  }
-
-  handleStartGame = () => {
-    this.setState({
-      playing: true,
-    })
-  }
-
   render = () => {
     const {
       playing,
-    } = this.state
+      resetGame,
+      startGame,
+    } = this.props
 
     return (
-      <Body headerHeight={80}>
-        <Header onClick={this.handleResetGame} />
+      <Body
+        headerHeight={90}
+        style={{
+          backgroundColor: '#171717',
+        }}
+      >
+        <Header />
         <If condition={! playing}>
           <IntroContainer
-            handleStartGame={this.handleStartGame}
+            handleStartGame={startGame}
           />
         </If>
         <If condition={playing}>
-          <WallContainer />
+          <WallContainer
+            handleResetGame={resetGame}
+          />
         </If>
       </Body>
     )
@@ -67,9 +59,12 @@ class AppContainer extends React.Component {
 }
 
 const ConnectedAppContainer = connect(
-  (state, props) => ({}),
+  (state, props) => ({
+    playing: getIn(state, 'game.playing'),
+  }),
   (dispatch, props) => ({
-    resetGame: () => dispatch(resetGame())
+    resetGame: () => dispatch(resetGame()),
+    startGame: () => dispatch(startGame()),
   }),
 )(AppContainer)
 

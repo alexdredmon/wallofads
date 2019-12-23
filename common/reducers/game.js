@@ -1,13 +1,18 @@
 import { randomInteger } from 'common/lib/core/util/random'
 import {
   CORRECT_GUESS,
+  INCORRECT_GUESS,
   RESET_GAME,
+  START_GAME,
+  TICK,
 } from 'common/actions/game'
 
 
 const initialState = {
   lastGoodGuess: Date.now(),
+  playing: false,
   score: 0,
+  time: 60,
 }
 
 const gameReducer = (state=initialState, action) => {
@@ -21,11 +26,37 @@ const gameReducer = (state=initialState, action) => {
     }
   }
 
+  if (action.type === INCORRECT_GUESS) {
+    const points = randomInteger(10000)
+    const score = state.score - points > 0 ? state.score - points : 0
+    return {
+      ...state,
+      score,
+    }
+  }
+
   if (action.type === RESET_GAME) {
     return {
       ...state,
       lastGoodGuess: Date.now(),
+      playing: false,
       score: 0,
+      time: initialState.time,
+    }
+  }
+
+  if (action.type === START_GAME) {
+    return {
+      ...state,
+      playing: true,
+    }
+  }
+
+  if (action.type === TICK) {
+    const time = state.time > 0 ? state.time - 1 : state.time
+    return {
+      ...state,
+      time
     }
   }
 

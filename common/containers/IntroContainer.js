@@ -12,22 +12,41 @@ class IntroContainer extends React.Component {
       handleStartGame
     } = this.props
 
+    const style = {
+      color: '#fff',
+      fontSize: 20,
+      textAlign: 'center',
+    }
+
     return (
       <FlexColumn onClick={handleStartGame}>
-        <FlexCell>
+        <FlexCell
+          style={{
+            cursor: 'pointer',
+          }}
+        >
           <View>
-            <Text style={{fontSize: 20, textAlign: 'center'}}>
-              This is a game where you're presented with a series of ads
-              and find the fakes.
+            <Text style={style}>
+              You'll be presented with five ads, one of which is fake.
+              Find as many fakes as you can in 60 seconds.
             </Text>
           </View>
           <View style={{marginTop:  30}}>
-            <Text style={{fontSize: 20, textAlign: 'center'}}>
+            <Text style={style}>
               Tap to begin, then tap the fake ads.
             </Text>
           </View>
-          <View style={{marginTop:  30}}>
-            <Text style={{fontSize: 20, textAlign: 'center'}}>
+          <View
+            style={{
+              marginTop:  30
+            }}
+          >
+            <Text
+              style={{
+                ...style,
+                color: '#34e2ff',
+              }}
+            >
               Concept by San Francisco artist Eric Dyer (eric-dyer.com)
             </Text>
           </View>

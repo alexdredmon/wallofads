@@ -50,11 +50,12 @@ class Ad extends React.Component {
 
   getBackgroundColor = () => {
     if (this.state.badGuess) {
-      return '#9b0000'  // red
+      return '#ff3737'  // red
     }
     if (this.state.goodGuess) {
-      return '#237a0b'  // green
+      return '#7dbf40'  // green
     }
+    return '#292929'
   }
   
   render = () => {
@@ -73,20 +74,20 @@ class Ad extends React.Component {
         style={{
           alignItems: 'flex-start',
           backgroundColor: this.getBackgroundColor(),
-          borderRadius: 15,
-          marginTop: 5,
+          cursor: 'pointer',
+          borderRadius: 10,
+          margin: 7,
           padding: 5,
+          paddingLeft: 15,
+          paddingRight: 15,
         }}
+        onClick={this.handleSelectAd}
       >
-        <View
-          onClick={this.handleSelectAd}
-        >
+        <View>
           <Text
             style={{
-              cursor: 'pointer',
-              color: (badGuess || goodGuess) ? '#ffffff' : '#0000ff',
+              color: '#fff',
               fontSize: 18,
-              textDecoration: (badGuess || goodGuess) ? undefined : 'underline',
             }}
           >
             {copy}
