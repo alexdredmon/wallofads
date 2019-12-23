@@ -2,46 +2,40 @@ import React from 'react'
 
 import { randomInteger, shuffleArray } from 'common/lib/core/util/random'
 
-import FlexCell from 'lib/components/layout/FlexCell'
 import FlexColumn from 'lib/components/layout/FlexColumn'
 
 import Ad from 'common/components/Ad'
 
 import ADS from 'common/data/ads'
 
+
 class WallContainer extends React.Component {
   state = {
     ads: undefined
   }
+
+  fake_ads = 1
+  total_ads = 5
 
   componentDidMount = () => {
     this.handleDealAds()
   }
 
   handleDealAds = () => {
-    const ad1 = randomInteger(ADS.fake.length)
-    const ad2 = randomInteger(ADS.real.length)
-    const ad3 = randomInteger(ADS.real.length)
-    const ad4 = randomInteger(ADS.real.length)
-
-    const ads = [
-      {
-        copy: ADS.fake[ad1],
+    let ads = []
+    for (let i=0; i<this.total_ads - this.fake_ads; i++) {
+      ads.push({
+        copy: ADS.real[randomInteger(ADS.real.length)],
+        fake: false,
+      })
+    }
+    for (let i=0; i<this.fake_ads; i++) {
+      ads.push({
+        copy: ADS.fake[randomInteger(ADS.fake.length)],
         fake: true,
-      },
-      {
-        copy: ADS.real[ad2],
-        fake: false,
-      },
-      {
-        copy: ADS.real[ad3],
-        fake: false,
-      },
-      {
-        copy: ADS.real[ad4],
-        fake: false,
-      },
-    ]
+      })
+    }
+
     this.setState({
       ads: shuffleArray(ads)
     })
@@ -55,12 +49,11 @@ class WallContainer extends React.Component {
     return (
       <FlexColumn>
         {ads && ads.map((ad, index) => (
-          <FlexCell
-            alignItems="flex-start"
-            key={index}
-          >
-            <Ad ad={ad} handleDealAds={this.handleDealAds} />
-          </FlexCell>
+          <Ad
+            ad={ad}
+            handleDealAds={this.handleDealAds}
+            key={`${index}-${ad.copy}`}
+          />
         ))}
       </FlexColumn>
     )

@@ -17,18 +17,18 @@ class IntroContainer extends React.Component {
         <FlexCell>
           <View>
             <Text style={{fontSize: 20, textAlign: 'center'}}>
-              Wall of Ads is a game where you're presented with a series of ads
-              and determine which are fake.
+              This is a game where you're presented with a series of ads
+              and find the fakes.
             </Text>
           </View>
-          <View style={{marginTop:  10}}>
+          <View style={{marginTop:  30}}>
             <Text style={{fontSize: 20, textAlign: 'center'}}>
-              Tap here to begin, then tap on the ad(s) you think are aren't real.
+              Tap to begin, then tap the fake ads.
             </Text>
           </View>
-          <View style={{marginTop:  10}}>
+          <View style={{marginTop:  30}}>
             <Text style={{fontSize: 20, textAlign: 'center'}}>
-              Envisioned by San Francisco artist Eric Dyer (https://eric-dyer.com)
+              Concept by San Francisco artist Eric Dyer (eric-dyer.com)
             </Text>
           </View>
         </FlexCell>
