@@ -14,6 +14,7 @@ class IntroContainer extends React.Component {
 
     const style = {
       color: '#fff',
+      fontFamily: 'Open Sans',
       fontSize: 20,
       textAlign: 'center',
     }
@@ -28,7 +29,7 @@ class IntroContainer extends React.Component {
           <View>
             <Text style={style}>
               You'll be presented with five ads, one of which is fake.
-              Find as many fakes as you can in 60 seconds.
+              Find as many fakes as you can in 30 seconds.
             </Text>
           </View>
           <View style={{marginTop:  30}}>

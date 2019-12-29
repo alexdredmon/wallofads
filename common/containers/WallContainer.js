@@ -28,10 +28,6 @@ class WallContainer extends React.Component {
   }
 
   handleDealAds = () => {
-    const {
-      tick,
-    } = this.props
-
     let ads = []
     for (let i=0; i<this.total_ads - this.fake_ads; i++) {
       ads.push({
@@ -74,6 +70,7 @@ class WallContainer extends React.Component {
             <Text
               style={{
                 color: '#ff3737',
+                fontFamily: 'Open Sans Condensed',
                 fontSize: 36,
                 fontWeight: 'bold',
               }}
@@ -90,6 +87,7 @@ class WallContainer extends React.Component {
               <Text
                 style={{
                   color: '#7dbf40',
+                  fontFamily: 'Open Sans Condensed',
                   fontSize: 26,
                   fontWeight: 'bold',
                 }}

@@ -64,10 +64,6 @@ class Ad extends React.Component {
         copy,
       },
     } = this.props
-    const {
-      badGuess,
-      goodGuess
-    } = this.state
 
     return (
       <FlexCell
@@ -87,6 +83,8 @@ class Ad extends React.Component {
           <Text
             style={{
               color: '#fff',
+              fontFamily: 'Open Sans',
+              fontWeight: 300,
               fontSize: 18,
             }}
           >

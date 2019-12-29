@@ -37,7 +37,7 @@ class AppContainer extends React.Component {
 
     return (
       <Body
-        headerHeight={90}
+        headerHeight={135}
         style={{
           backgroundColor: '#171717',
         }}

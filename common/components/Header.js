@@ -6,9 +6,23 @@ import { getIn } from 'common/lib/core/util/iterable'
 
 import FlexCell from 'lib/components/layout/FlexCell'
 import FlexRow from 'lib/components/layout/FlexRow'
+import Image from 'lib/components/layout/Image'
 import Text from 'lib/components/layout/Text'
 import View from 'lib/components/layout/View'
 
+const styles = {
+  label: {
+    color: '#727272',
+    fontFamily: 'Open Sans Condensed',
+    fontSize: 20,
+    textTransform: 'uppercase',
+  },
+  value: {
+    color: '#fff',
+    fontFamily: 'Open Sans Condensed',
+    fontSize: 20,
+  },
+}
 
 class Header extends React.Component {
   render = () => {
@@ -18,26 +32,30 @@ class Header extends React.Component {
     } = this.props
 
     return (
-      <View
-        {...this.props}
-        style={{
-          ...this.props.style,
-        }}
-      >
-        <FlexRow>
+      <View {...this.props}>
+        <FlexRow
+          style={{
+            height: 50,
+          }}
+        >
           <FlexCell>
-            <Text
+            <Image
+              alt="WALL OF ADS"
+              srcMobile={require('../assets/img/header.png')}
+              srcWeb="header.png"
               style={{
-                color: '#f71b7d',
-                fontSize: 40,
-                fontWeight: 'bold',
+                height: 50,
+                margin: 0,
               }}
-            >
-              WALL OF ADS
-            </Text>
+            />
           </FlexCell>
         </FlexRow>
-        <FlexRow>
+        <FlexRow
+          style={{
+            height: 50,
+            paddingTop: 15,
+          }}
+        >
           <FlexCell
             style={{
               justifyContent: 'flex-start',
@@ -47,18 +65,15 @@ class Header extends React.Component {
           >
             <Text
               style={{
-                color: '#727272',
-                fontSize: 20,
+                ...styles.label,
                 marginRight: 5,
-                textTransform: 'uppercase',
               }}
             >
               Time:
             </Text>
             <Text
               style={{
-                color: '#fff',
-                fontSize: 20,
+                ...styles.value,
                 marginRight: 5,
               }}
             >
@@ -74,18 +89,16 @@ class Header extends React.Component {
           >
             <Text
               style={{
-                color: '#727272',
-                fontSize: 20,
+                ...styles.label,
                 marginLeft: 5,
-                textTransform: 'uppercase',
               }}
             >
               Score:
             </Text>
             <Text
               style={{
+                ...styles.value,
                 color: '#7dbf40',
-                fontSize: 20,
                 marginLeft: 5,
               }}
             >

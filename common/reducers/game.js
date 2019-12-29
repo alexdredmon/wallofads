@@ -12,7 +12,7 @@ const initialState = {
   lastGoodGuess: Date.now(),
   playing: false,
   score: 0,
-  time: 60,
+  time: 30,
 }
 
 const gameReducer = (state=initialState, action) => {

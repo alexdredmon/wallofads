@@ -1,6 +1,4 @@
 import {
-  RESET_GAME,
-  startGame,
   START_GAME,
   TICK,
   tick,

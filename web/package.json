@@ -14,8 +14,8 @@
     "redux": "^4.0.0"
   },
   "scripts": {
-    "start": "../scripts/watch_and_sync_common.sh & react-scripts start",
-    "build": "react-scripts build",
+    "start": "../scripts/sync_common.sh & react-scripts start",
+    "build": "../scripts/sync_common.sh &react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
