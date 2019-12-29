@@ -1,5 +1,6 @@
 import React from 'react'
 
+import AppStoreDownload from 'lib/components/layout/AppStoreDownload'
 import FlexCell from 'lib/components/layout/FlexCell'
 import FlexColumn from 'lib/components/layout/FlexColumn'
 import Text from 'lib/components/layout/Text'
@@ -20,21 +21,24 @@ class IntroContainer extends React.Component {
     }
 
     return (
-      <FlexColumn onClick={handleStartGame}>
-        <FlexCell
-          style={{
-            cursor: 'pointer',
-          }}
-        >
+      <FlexColumn>
+        <FlexCell>
           <View>
             <Text style={style}>
               You'll be presented with five ads, one of which is fake.
               Find as many fakes as you can in 30 seconds.
             </Text>
           </View>
-          <View style={{marginTop:  30}}>
-            <Text style={style}>
-              Tap to begin, then tap the fake ads.
+          <View
+            onClick={handleStartGame}
+            style={{marginTop:  30}}
+          >
+            <Text style={{
+              color: '#7dbf40',
+              fontFamily: 'Open Sans Condensed',
+              fontSize: 30,
+            }}>
+              START GAME
             </Text>
           </View>
           <View
@@ -50,6 +54,14 @@ class IntroContainer extends React.Component {
             >
               Concept by San Francisco artist Eric Dyer (eric-dyer.com)
             </Text>
+          </View>
+          <View>
+            <AppStoreDownload
+              style={{
+                marginTop: 50
+              }}
+              url="https://apps.apple.com/us/app/wall-of-ads/id1492645705?ls=1"
+            />
           </View>
         </FlexCell>
       </FlexColumn>
