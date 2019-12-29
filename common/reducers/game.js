@@ -48,6 +48,7 @@ const gameReducer = (state=initialState, action) => {
   if (action.type === START_GAME) {
     return {
       ...state,
+      lastGoodGuess: Date.now(),
       playing: true,
     }
   }
