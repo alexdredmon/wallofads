@@ -25,6 +25,7 @@ const gameMiddleware = store => next => action => {
       if (! isBackgroundAudioPlaying) {
         store.dispatch(playSound(
           require('common/assets/audio/background.mp3'),
+          'audio/background.mp3',
           true,
           .9,
         ))
@@ -38,14 +39,16 @@ const gameMiddleware = store => next => action => {
     if (action.type === CORRECT_GUESS) {
       store.dispatch(playSound(
         require('common/assets/audio/good.m4a'),
+        'audio/good.m4a',
         false,
-        .03,
+        .05,
       ))
     }
 
     if (action.type === INCORRECT_GUESS) {
       store.dispatch(playSound(
         require('common/assets/audio/bad.m4a'),
+        'audio/bad.m4a',
         false,
         .9,
       ))
