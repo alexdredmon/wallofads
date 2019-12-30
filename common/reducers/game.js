@@ -3,12 +3,14 @@ import {
   CORRECT_GUESS,
   INCORRECT_GUESS,
   RESET_GAME,
+  START_BACKGROUND_AUDIO,
   START_GAME,
   TICK,
 } from 'common/actions/game'
 
 
 const initialState = {
+  isBackgroundAudioPlaying: false,
   lastGoodGuess: Date.now(),
   playing: false,
   score: 0,
@@ -50,6 +52,13 @@ const gameReducer = (state=initialState, action) => {
       ...state,
       lastGoodGuess: Date.now(),
       playing: true,
+    }
+  }
+
+  if (action.type === START_BACKGROUND_AUDIO) {
+    return {
+      ...state,
+      isBackgroundAudioPlaying: true,
     }
   }
 

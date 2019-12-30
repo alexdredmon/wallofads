@@ -10,6 +10,7 @@ import Body from 'lib/components/layout/Body'
 
 import {
   resetGame,
+  startBackgroundAudio,
   startGame,
 } from 'common/actions/game'
 
@@ -28,6 +29,17 @@ const store = createStore(
 )
 
 class AppContainer extends React.Component {
+  componentDidMount = () => {
+    const {
+      isBackgroundAudioPlaying,
+      startBackgroundAudio,
+    } = this.props
+
+    if  (! isBackgroundAudioPlaying) {
+      startBackgroundAudio()
+    }
+  }
+
   render = () => {
     const {
       playing,
@@ -60,9 +72,11 @@ class AppContainer extends React.Component {
 
 const ConnectedAppContainer = connect(
   (state, props) => ({
+    isBackgroundAudioPlaying: getIn(state, 'game.isBackgroundAudioPlaying'),
     playing: getIn(state, 'game.playing'),
   }),
   (dispatch, props) => ({
+    startBackgroundAudio: () => dispatch(startBackgroundAudio()),
     resetGame: () => dispatch(resetGame()),
     startGame: () => dispatch(startGame()),
   }),

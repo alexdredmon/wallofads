@@ -100,6 +100,6 @@ export default connect(
   (state, props) => ({}),
   (dispatch, props) => ({
     correctGuess: ad => dispatch(correctGuess(ad)),
-    incorrectGuess: ad => dispatch(incorrectGuess(ad))
+    incorrectGuess: ad => dispatch(incorrectGuess(ad)),
   }),
 )(Ad)
