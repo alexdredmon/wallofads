@@ -1,4 +1,3 @@
-import { getIn } from 'common/lib/core/util/iterable'
 import {
   playSound,
 } from 'common/lib/core/actions/audio'
@@ -40,7 +39,7 @@ const gameMiddleware = store => next => action => {
       store.dispatch(playSound(
         require('common/assets/audio/good.m4a'),
         false,
-        .9,
+        .03,
       ))
     }
 
