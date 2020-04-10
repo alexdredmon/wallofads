@@ -2,6 +2,12 @@
 A game where you try to spot the fake in a series of ads
 
 ## Setup
+
+Initialize submodules:
+```bash
+git submodule update --init --recursive
+```
+
 #### Mobile
 
 Install dependencies in `./mobile` via:
