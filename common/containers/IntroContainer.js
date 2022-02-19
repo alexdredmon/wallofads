@@ -52,7 +52,7 @@ class IntroContainer extends React.Component {
                 color: '#34e2ff',
               }}
             >
-              Concept by San Francisco artist Eric Dyer (eric-dyer.com)
+              Concept by San Francisco artist E Dyer (edyerart.com)
             </Text>
           </View>
           <View>
